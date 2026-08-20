@@ -6,7 +6,7 @@ const STORAGE_KEYS = {
 } as const;
 
 const DEFAULT_SETTINGS: AppSettings = {
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://linklite-production-c01c.up.railway.app',
   theme: 'dark',
   autoCopyOnShorten: true,
 };

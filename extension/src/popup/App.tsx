@@ -25,7 +25,7 @@ export const App: React.FC = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   // Settings State
-  const [apiUrl, setApiUrl] = useState('http://localhost:3000');
+  const [apiUrl, setApiUrl] = useState('https://linklite-production-c01c.up.railway.app');
   const [isTestingServer, setIsTestingServer] = useState(false);
   const [serverStatus, setServerStatus] = useState<'idle' | 'connected' | 'error'>('idle');
 
