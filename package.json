@@ -1,0 +1,26 @@
+{
+  "name": "linklite-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LinkLite - Instantly shorten, organize and share links",
+  "scripts": {
+    "dev:server": "npm --prefix server run dev",
+    "dev:extension": "npm --prefix extension run dev",
+    "build:server": "npm --prefix server run build",
+    "build:extension": "npm --prefix extension run build",
+    "build": "npm run build:server && npm run build:extension",
+    "install:all": "npm install && npm --prefix server install && npm --prefix extension install"
+  },
+  "keywords": [
+    "chrome-extension",
+    "url-shortener",
+    "qr-code",
+    "analytics",
+    "express",
+    "prisma",
+    "react",
+    "typescript"
+  ],
+  "author": "LinkLite Team",
+  "license": "MIT"
+}

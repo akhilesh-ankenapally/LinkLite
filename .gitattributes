@@ -1,0 +1,26 @@
+# Auto detect text files and perform LF normalization on checkin
+* text=auto eol=lf
+
+# Explicitly declare text files you want to always be normalized and converted to LF on checkout
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.prisma text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+Dockerfile text eol=lf
+
+# Declare binary files to prevent Git from modifying them
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text eol=lf

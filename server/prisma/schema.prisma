@@ -1,0 +1,35 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Url {
+  id          String     @id @default(uuid())
+  originalUrl String     @map("original_url") @db.Text
+  shortCode   String     @unique @map("short_code") @db.VarChar(16)
+  clickCount  Int        @default(0) @map("click_count")
+  createdAt   DateTime   @default(now()) @map("created_at")
+  updatedAt   DateTime   @updatedAt @map("updated_at")
+  clicks      ClickLog[]
+
+  @@index([shortCode])
+  @@index([createdAt(sort: Desc)])
+  @@map("urls")
+}
+
+model ClickLog {
+  id        String   @id @default(uuid())
+  urlId     String   @map("url_id")
+  country   String?  @db.VarChar(64)
+  referrer  String?  @db.VarChar(255)
+  clickedAt DateTime @default(now()) @map("clicked_at")
+  url       Url      @relation(fields: [urlId], references: [id], onDelete: Cascade)
+
+  @@index([urlId])
+  @@index([clickedAt(sort: Desc)])
+  @@map("click_logs")
+}
